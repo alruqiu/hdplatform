@@ -1,0 +1,19 @@
+UptimeRobot Setup Instructions for Keeping Your Glitch App Always On
+
+Follow these steps to set up UptimeRobot to ping your Glitch application every 5 minutes,
+ensuring it never goes to sleep and remains available 24/7:
+
+1. Create a free account at UptimeRobot.com
+   - Go to https://uptimerobot.com/ and sign up
+
+2. After logging in, click "Add New Monitor"
+   - Select "HTTP(s)" as the monitor type
+   - Enter a friendly name (e.g., "Hijab-Ul-Dua Platform")
+   - In the URL field, enter your Glitch app URL (e.g., https://your-app-name.glitch.me)
+   - Set the monitoring interval to 5 minutes
+   - Click "Create Monitor"
+
+3. Your Glitch application will now be pinged every 5 minutes, preventing it from sleeping
+
+This external monitoring combined with the internal keep-alive script we've added ensures
+your application will stay up 24/7 on Glitch's free tier.

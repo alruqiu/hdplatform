@@ -1,0 +1,23 @@
+{
+  "install": "npm install",
+  "start": "npm run build && npm run start",
+  "watch": {
+    "install": {
+      "include": [
+        "^package\\.json$"
+      ]
+    },
+    "restart": {
+      "exclude": [
+        "^public/",
+        "^dist/"
+      ],
+      "include": [
+        "\\.js$",
+        "\\.ts$",
+        "\\.json"
+      ]
+    },
+    "throttle": 1000
+  }
+}
