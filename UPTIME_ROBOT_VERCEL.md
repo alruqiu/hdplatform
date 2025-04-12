@@ -34,10 +34,25 @@ For better monitoring, create a dedicated health check endpoint in your applicat
 1. Add a simple endpoint in your Express application:
 ```javascript
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.status(200).json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development',
+    host: os.hostname()
+  });
 });
 ```
 
 2. Use this endpoint URL in UptimeRobot (e.g., https://hdplatform.vercel.app/api/health)
+
+   This endpoint returns useful information:
+   ```json
+   {
+     "status": "ok",
+     "timestamp": "2025-04-12T12:55:26.123Z",
+     "environment": "production",
+     "host": "vercel-instance-123"
+   }
+   ```
 
 This will provide more accurate monitoring specific to your application's health rather than just checking if the server responds.
